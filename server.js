@@ -11,7 +11,7 @@ mongoose.set("debug", true);
 
 // morgan is used for automated logging of requests, responses and related data. When added as a middleware to an express/connect app, by default it should log statements to stdout showing details of: remote ip, request method, http version, response status
 
-var PORT = process.env.PORT || 3035;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
 var app = express();
@@ -36,11 +36,8 @@ app.set("view engine", "handlebars");
 // Connect to the Mongo DB - uncomment this once .env is setup and working
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Connect to the Mongo DB
-mongoose.connect(MONGODB_URI);
-
 // mongoose.connect(MONGODB_URI);
-// mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
+mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
 
 // Connect to local mongodb
 // mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
