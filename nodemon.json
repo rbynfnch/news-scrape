@@ -1,0 +1,6 @@
+{
+    "env":{
+        "PORT":8080,
+        "MONGO_DB_PASSWORD":"7DBfDmPEDZfN4GUW"
+    }
+}

@@ -34,7 +34,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB - uncomment this once .env is setup and working
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || `mongodb+srv://badcat:${process.env.MONGO_DB_PASSWORD}@cluster0-uayto.mongodb.net/news-scrape?retryWrites=true&w=majority
+`;
 
 // mongoose.connect(MONGODB_URI);
 mongoose.connect(MONGODB_URI,{ useNewUrlParser: true });
